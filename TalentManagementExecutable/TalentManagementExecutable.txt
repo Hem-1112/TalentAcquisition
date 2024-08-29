@@ -1,0 +1,57 @@
+1. Open terminal.
+
+2. Check if mysql up and running
+sudo systemctl status mysql
+
+3. Connect to database from command line client
+sudo mysql
+
+4. Create dayabase for project
+create database talent;
+
+5. Create a new ID with the username "dbuser" and the password "passpass"
+create user 'dbuser'@'localhost' identified by 'passpass';
+
+6. Grant permissions to the new user
+grant all privileges on talent.* to 'dbuser'@'localhost';
+
+7. Exit the mysql cli shell:
+quit;
+
+8. Go to your desired location to clone repositories
+cd ..
+
+9. Clone Backend Repository
+git clone https://github.com/Junove/TalentManagementBackend.git
+
+10. Go to TalentManagementBackend
+cd TalentManagementBackend/
+
+11. Stops any running Gradle daemon processes.
+gradle -stop
+
+12. Create or update the Gradle wrapper files 
+gradle wrapper
+
+13. Compile and package the project according to the build script configuration.
+gradle build
+
+14. Boot the project
+./gradlew bootRun &
+
+(When you terminate your server and restart again you may want to change spring.sql.init.mode to none in application.properties)
+
+15. Go back to root foler
+cd ..
+
+16. Clone Frontend Repository
+git clone https://github.com/Junove/TalentManagementFrontend.git
+
+17. Go to TalentManagementFrontend
+cd TalentManagementFrontend/
+
+18. Install all the dependencies
+npm install --force
+
+19. Run the project
+npm run start
